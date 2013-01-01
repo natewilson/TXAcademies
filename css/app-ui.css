@@ -1,0 +1,14 @@
+
+/* Pages display styles */
+
+#pages > div {
+    display: none;
+}
+#pages > div.current {
+    display: block;
+}
+
+a {
+  text-decoration:none;
+  color: #3333CC;
+}
