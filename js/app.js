@@ -2,7 +2,7 @@ var theScroll;
 function scroll(){
     theScroll = new iScroll('wrapper');
 }
-document.addEventListener('DOMContentLoaded', scroll, false);
+//document.addEventListener('DOMContentLoaded', scroll, false);
 
 $(document).ready(function(){
 	$('#nav-bar a').on('click', function(e){
