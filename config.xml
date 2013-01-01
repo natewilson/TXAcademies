@@ -18,9 +18,9 @@
     </author>
 
     <!-- Android icons -->
-    <icon src="icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
-    <icon src="icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
-    <icon src="icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
-    <icon src="icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="img/Android/RSA-ldpi-36.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="img/Android/RSA-mdpi-48.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="img/Android/RSA-hdpi-72.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="img/Android/RSA-xhdpi-96.png" gap:platform="android" gap:density="xhdpi" />
 
 </widget>
