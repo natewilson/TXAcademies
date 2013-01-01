@@ -1,4 +1,4 @@
-html, body {
+html, body, div {
   margin: 0;
   padding: 0;
   border: 0;
@@ -7,9 +7,6 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-size: 16px;
-  background: #fff;
-  padding: 5px;
-  color: #000;
   word-wrap: break-word;
   -webkit-text-size-adjust: none;
 }
