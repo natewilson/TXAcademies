@@ -6,7 +6,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/app-ui.css">
+  <link rel="stylesheet" href="css/tweets.css">
   <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/jquery.tmpl.min.js"></script>
   <script src="js/iscroll-lite.js"></script>
   <script src="js/app.js"></script>
 </head>
@@ -16,7 +18,16 @@
     <div id="pages">
       <div id="agenda" class="current"> Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page Agenda Page 
       </div>
-      <div id="posts">Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page Posts Page 
+			<div id="posts">
+				<ul id="tweets">
+				</ul>
+				<script id="tmpl-tweets" type="text/x-jquery-tmpl">
+					<li>
+						<a class="avatar" href="#"><img src="${profile_image_url}" alt="${from_user}"></a>
+						<a href="http://twitter.com/${from_user}"><h2>${from_user}</h2></a>
+						<span class="details">${text} </span>
+					</li>
+				</script>
       </div>
       <div id="people">People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page People Page 
       </div>
