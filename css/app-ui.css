@@ -9,7 +9,7 @@ body {
 }
 
 ul#nav-bar {
-	background-image: url("../img/nav_bar_back.png");
+	background-image: url("../img/all/nav_bar_back.png");
 	background-repeat: repeat-x;
 	border: 0px;
 	bottom: 0px;
@@ -26,7 +26,7 @@ ul#nav-bar li {
 	width: 33.333%;
 }
 ul#nav-bar li a {
-	color: #888;
+	color: #BBB;
 	font-size: 22px;
 	line-height: 44px;
 	text-decoration: none;
