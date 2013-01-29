@@ -1,13 +1,41 @@
 body {
 	background-image: url("../img/all/tileable-white-wood.png");
 }
-#pages > div {
-    display: none;
-}
-#pages > div.current {
-    display: block;
+
+div#layout-debug {
+	display: inline;
 }
 
+@media all and (orientation:portrait) {
+	div#layout-debug > span#portrait { display: inline; }
+	div#layout-debug > span#landscape { display: none; }
+}
+
+@media all and (orientation:landscape) {
+	div#layout-debug > span#portrait { display: none; }
+	div#layout-debug > span#landscape { display: inline; }
+}
+
+@media all and (orientation:portrait) and (min-width: 600px), 
+	all and (orientation:landscape) and (min-height: 600px) {
+	.dynamic.large      { display: block; }
+	.dynamic:not(.large){ display: none;  }
+}
+
+@media all and (orientation:portrait) and (max-width: 600px) and (min-width: 420px), 
+	all and (orientation:landscape) and (max-height: 600px) and (min-height: 420px) {
+	.dynamic.medium      { display: block; }
+	.dynamic:not(.medium){ display: none;  }
+}
+
+@media all and (orientation:portrait) and (max-width: 420px), 
+	all and (orientation:landscape) and (max-height: 420px) {
+	.dynamic.small      { display: block; }
+	.dynamic:not(.small){ display: none;  }
+}
+
+
+/* NAVIGATION BAR AT BOTTOM */
 ul#nav-bar {
 	background-image: url("../img/all/nav_bar_back.png");
 	background-repeat: repeat-x;
