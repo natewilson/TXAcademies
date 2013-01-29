@@ -17,6 +17,12 @@
         Nate Wilson (ba663)
     </author>
 
+    <!-- iOS specific config -->
+    <preference name="webviewbounce" value="false" />
+    <icon src="img/ios/icon.png" width="57" height="57" />
+    <icon src="img/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="img/ios/icon_at_2x.png" width="114" height="114" />
+
     <!-- Android icons -->
     <icon src="img/Android/RSA-ldpi-36.png" gap:platform="android" gap:density="ldpi" />
     <icon src="img/Android/RSA-mdpi-48.png" gap:platform="android" gap:density="mdpi" />
