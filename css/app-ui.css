@@ -3,7 +3,7 @@ body {
 }
 
 div#layout-debug {
-	display: inline;
+	display: none;
 }
 
 @media all and (orientation:portrait) {
@@ -16,22 +16,45 @@ div#layout-debug {
 	div#layout-debug > span#landscape { display: inline; }
 }
 
+/* GENERAL RULES FOR SMALL MEDIUM LARGE */
+
 @media all and (orientation:portrait) and (min-width: 600px), 
 	all and (orientation:landscape) and (min-height: 600px) {
-	.dynamic.large      { display: block; }
-	.dynamic:not(.large){ display: none;  }
+	.dynamic.large.block       { display: block;  }
+	.dynamic.large:not(.block) { display: inline; }
+	.dynamic:not(.large)       { display: none;   }
+}
+@media all and (orientation:portrait) and (max-width: 599px) and (min-width: 420px), 
+	all and (orientation:landscape) and (max-height: 599px) and (min-height: 420px) {
+	.dynamic.medium.block       { display: block;  }
+	.dynamic.medium:not(.block) { display: inline; }
+	.dynamic:not(.medium)       { display: none;   }
+}
+@media all and (orientation:portrait) and (max-width: 419px), 
+	all and (orientation:landscape) and (max-height: 419px) {
+	.dynamic.small.block       { display: block;  }
+	.dynamic.small:not(.block) { display: inline; }
+	.dynamic:not(.small)       { display: none;   }
 }
 
-@media all and (orientation:portrait) and (max-width: 600px) and (min-width: 420px), 
-	all and (orientation:landscape) and (max-height: 600px) and (min-height: 420px) {
-	.dynamic.medium      { display: block; }
-	.dynamic:not(.medium){ display: none;  }
-}
+/* ======================= */
+/* RULES SPECIFIC TO WIDTH */
+/* ======================= */
 
-@media all and (orientation:portrait) and (max-width: 420px), 
-	all and (orientation:landscape) and (max-height: 420px) {
-	.dynamic.small      { display: block; }
-	.dynamic:not(.small){ display: none;  }
+@media all and (max-width: 639px) {
+	.dynamic-wide.small.block       { display: block;  }
+	.dynamic-wide.small:not(.block) { display: inline; }
+	.dynamic-wide:not(.small)       { display: none;   }
+}
+@media all and (min-width: 640px) and (max-width: 1023px) {
+	.dynamic-wide.medium.block       { display: block;  }
+	.dynamic-wide.medium:not(.block) { display: inline; }
+	.dynamic-wide:not(.medium)       { display: none;   }
+}
+@media all and (min-width: 1024px) {
+	.dynamic-wide.large.block       { display: block;  }
+	.dynamic-wide.large:not(.block) { display: inline; }
+	.dynamic-wide:not(.large)       { display: none;   }
 }
 
 
@@ -48,14 +71,23 @@ ul#nav-bar {
 	width: 100%;
 }
 ul#nav-bar li {
+	color: #BBB;
 	display: inline;
 	float: left;
-	text-align: center;
-	width: 33.333%;
-}
-ul#nav-bar li a {
-	color: #BBB;
 	font-size: 22px;
 	line-height: 44px;
+	text-align: center;
 	text-decoration: none;
+	width: 24.85%;
+}
+ul#nav-bar li a {
+	text-decoration: none;
+}
+ul#nav-bar li span {
+	color: #BBB;
+	text-decoration: none;
+	vertical-align: middle;
+}
+ul#nav-bar li img {
+	vertical-align: middle;
 }
