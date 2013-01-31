@@ -3,6 +3,9 @@ html, body, div {
   padding: 0;
   border: 0;
 }
+html, body {
+  height: 100%;
+}
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;

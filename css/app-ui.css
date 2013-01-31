@@ -16,7 +16,9 @@ div#layout-debug {
 	div#layout-debug > span#landscape { display: inline; }
 }
 
+/* ==================================== */
 /* GENERAL RULES FOR SMALL MEDIUM LARGE */
+/* ==================================== */
 
 @media all and (orientation:portrait) and (min-width: 600px), 
 	all and (orientation:landscape) and (min-height: 600px) {
@@ -46,15 +48,29 @@ div#layout-debug {
 	.dynamic-wide.small:not(.block) { display: inline; }
 	.dynamic-wide:not(.small)       { display: none;   }
 }
-@media all and (min-width: 640px) and (max-width: 1023px) {
+@media all and (min-width: 640px) and (max-width: 919px) {
 	.dynamic-wide.medium.block       { display: block;  }
 	.dynamic-wide.medium:not(.block) { display: inline; }
 	.dynamic-wide:not(.medium)       { display: none;   }
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 920px) {
 	.dynamic-wide.large.block       { display: block;  }
 	.dynamic-wide.large:not(.block) { display: inline; }
 	.dynamic-wide:not(.large)       { display: none;   }
+}
+
+
+/* Pages */
+#pages {
+	height: 100%;
+	background-image: url("../img/all/seal-overlay-8p.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 30%;
+}
+#pages > .page {
+	height: 100%;
+	padding: 0px 8px 0px 8px;
 }
 
 
