@@ -17,6 +17,14 @@ function onDeviceReady() {
 /** Load this stuff up when the document loads **/
 $(document).ready(function(){
 
+	// Setup all external links (goto) with 
+	// the Childbrowser plugin
+	$('a[goto^="http"]').on('click', function() {
+	    window.plugins.childBrowser.showWebPage(
+	        $(this).attr("goto"), {showLocationBar:false});
+	    return false;
+	});
+
 	// Add the click behaviour to the nav bar
 	$('#nav-bar a').on('click', function(e){
 	    e.preventDefault();
