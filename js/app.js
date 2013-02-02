@@ -21,7 +21,13 @@ $(document).ready(function(){
 	// the Childbrowser plugin
 	$('a[goto^="http"]').on('click', function() {
 	    window.plugins.childBrowser.showWebPage(
-	        $(this).attr("goto"), {showLocationBar:false});
+	        $(this).attr("goto"),
+	        {
+	            showLocationBar:true,
+	            showAddress:true,
+	            showNavigationBar:true
+	        }
+	    );
 	    return false;
 	});
 
