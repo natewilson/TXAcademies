@@ -17,10 +17,14 @@
         Nate Wilson (ba663)
     </author>
 
+    <!-- Plugin for Child-browsing -->
+    <gap:plugin name="ChildBrowser" />
+
     <!-- Splash Screen MUST be hidden using JavaScript -->
     <preference name="auto-hide-splash-screen" value="false" />
 
     <!-- iOS specific config -->
+    <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <icon src="img/ios/icon.png" width="57" height="57" />
     <icon src="img/ios/icon-72.png" gap:platform="ios" width="72" height="72" />

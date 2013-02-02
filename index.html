@@ -6,6 +6,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/app-ui.css">
+  <script src="phonegap.js"></script>
+  <script src="childbrowser.js"></script>
   <script src="js/jquery-1.8.3.min.js"></script>
   <script src="js/jquery.tmpl.min.js"></script>
   <script src="js/iscroll-lite.js"></script>
@@ -36,7 +38,7 @@
   <div class="page" id="page-club">
     <h2>The 1864 Club<h2>
     <h3>Exclusively for Undergraduates</h3>
-    <a href="https://www.wepay.com/x2zr00o">Join the Club!</a>
+    <a href="#" onclick="window.plugins.childBrowser.showWebPage('https://www.wepay.com/x2zr00o', showLocationBar:true);return false;">Join the Club!</a>
     <ul>
       <li>Recognition in The UNICORN as a contributor</li>
       <li>1864 Club recognition pin</li>
