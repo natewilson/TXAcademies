@@ -17,8 +17,11 @@
         Nate Wilson (ba663)
     </author>
 
-    <!-- Plugin for Child-browsing -->
+    <!-- Plugins for Phonegap Build(tm)  -->
     <gap:plugin name="ChildBrowser" />
+    <gap:plugin name="FacebookConnect">
+        <param name="APP_ID" value="123456" />
+    </gap:plugin>
 
     <!-- Splash Screen MUST be hidden using JavaScript -->
     <preference name="auto-hide-splash-screen" value="false" />
