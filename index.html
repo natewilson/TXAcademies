@@ -35,14 +35,14 @@
 					       });
 			
                 		FB.getLoginStatus(function(response) {
-                                	alert("FB.loginStatus=" + response);
+                                	alert("FB.loginStatus=" + JSON.stringify(response));
 					});
 
 				FB.api("/me",{fields:'last_name'},function(response){
-					if ((!(response.error)) && response.first_name) {
+					if ((!(response.error)) && response.last_name) {
 						document.getElementById('data').innerHTML = "Welcome Brother "+response.last_name;
 					} else {
-						document.getElementById('data').innerHTML = "So here's the deal: "+response.error;
+						document.getElementById('data').innerHTML = "So here's the deal: "+JSON.stringify(response.error);
 					}
 				});
 
