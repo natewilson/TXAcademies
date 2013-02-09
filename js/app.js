@@ -30,7 +30,7 @@ function getLoginStatus() {
 				} else {
 					slog("FB.login indicates cancelled");	// cancelled
 				}
-			});
+			},{scope: "email"});
 		}
 	});
 }
