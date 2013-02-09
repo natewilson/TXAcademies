@@ -19,12 +19,22 @@
   <script>
 		document.addEventListener('deviceready', function() {
 			try {
-				alert('Device is ready! Make sure you set your app_id below this alert.');
 				FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
 				document.getElementById('data').innerHTML = "";
+			        FB.Event.subscribe('auth.login', function(response) {
+					       alert('auth.login event');
+					       });
+			        FB.Event.subscribe('auth.logout', function(response) {
+					       alert('auth.logout event');
+					       });
+			        FB.Event.subscribe('auth.sessionChange', function(response) {
+					       alert('auth.sessionChange event');
+					       });
+			        FB.Event.subscribe('auth.statusChange', function(response) {
+					       alert('auth.statusChange event');
+					       });
 			} catch (e) {
 				document.getElementById('data').innerHTML = "FAILED";
-				alert(e);
 			}
 		}, false);
   </script>
