@@ -16,7 +16,6 @@ function slog(str) {
 }
 
 
-
 function getLoginStatus() {
 	FB.getLoginStatus(function(response) {
 		if (response.status == 'connected') {
@@ -29,6 +28,17 @@ function getLoginStatus() {
 }
 
 
+function greetUser() {
+	getLoginStatus();
+	FB.api("me/",{fields:'id,last_name'},function(response){
+		if (response.last_name) {
+			document.getElementById("data").innerHTML = "Welcome Brother " + response.last_name;
+		} else {
+			slog("No last name retrieved from FB.  Error: " + JSON.stringify(response.error));
+		}
+	});
+}
+
 
 // function to call when Cordova/PhoneGap native code is loaded.
 function onDeviceReady() {
@@ -39,14 +49,6 @@ function onDeviceReady() {
 	// Attempt connection to Facebook:
 	try {
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
-		getLoginStatus();
-		FB.api("me/",{fields:'id,last_name'},function(response){
-			if (response.last_name) {
-				document.getElementByID("data").innerHTML = "Welcome Brother " + response.last_name;
-			} else {
-				slog("No last name retrieved from FB.  Error: " + JSON.stringify(response.error));
-			}
-		});
 	} catch (e) {
 		slog("Facebook init issue: " + JSON.stringify(e));
 	}
