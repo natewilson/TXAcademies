@@ -18,11 +18,13 @@ function slog(str) {
 
 function getLoginStatus() {
 	FB.getLoginStatus(function(response) {
+		slog("JSON FB.getLoginStatus: " + JSON.stringify(response));
 		if (response.status == 'connected') {
 			slog('logged in');
 		} else {
 			slog('not logged in - showing FB.login');
 			FB.login(function(response) {
+				slog("JSON FB.login: " + JSON.stringify(response);
 				if (response.authResponse) {
 					slog("FB.login indicates success");	// connected
 				} else {
@@ -37,6 +39,7 @@ function getLoginStatus() {
 function greetUser() {
 	getLoginStatus();
 	FB.api("me/",{fields:'id,last_name'},function(response){
+		slog("JSON FB.api: " + JSON.stringify(response));
 		if (response.last_name) {
 			document.getElementById("data").innerHTML = "Welcome Brother " + response.last_name;
 		} else {
