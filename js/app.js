@@ -24,7 +24,7 @@ function getLoginStatus() {
 		} else {
 			slog('not logged in - showing FB.login');
 			FB.login(function(response) {
-				slog("JSON FB.login: " + JSON.stringify(response);
+				slog("JSON FB.login: " + JSON.stringify(response));
 				if (response.authResponse) {
 					slog("FB.login indicates success");	// connected
 				} else {
