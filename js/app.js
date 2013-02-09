@@ -22,7 +22,13 @@ function getLoginStatus() {
 			slog('logged in');
 		} else {
 			slog('not logged in - showing FB.login');
-			FB.login();
+			FB.login(function(response) {
+				if (response.authResponse) {
+					slog("FB.login indicates success");	// connected
+				} else {
+					slog("FB.login indicates cancelled");	// cancelled
+				}
+			});
 		}
 	});
 }
