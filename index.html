@@ -33,8 +33,13 @@
 			        FB.Event.subscribe('auth.statusChange', function(response) {
 					       alert('auth.statusChange event');
 					       });
+			
+                		FB.getLoginStatus(function(response) {
+                                	alert("FB.loginStatus=" + response);
+					});
+
 			} catch (e) {
-				document.getElementById('data').innerHTML = "FAILED";
+				document.getElementById('data').innerHTML = "FAILED" + e;
 			}
 		}, false);
   </script>
