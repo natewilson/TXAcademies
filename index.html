@@ -11,9 +11,23 @@
   <script src="cdv-plugin-fb-connect.js"></script>
   <script src="facebook_js_sdk.js"></script>
   <script src="js/jquery-1.8.3.min.js"></script>
+  <!--
   <script src="js/jquery.tmpl.min.js"></script>
   <script src="js/iscroll-lite.js"></script>
+  -->
   <script src="js/app.js"></script>
+  <script>
+		document.addEventListener('deviceready', function() {
+			try {
+				alert('Device is ready! Make sure you set your app_id below this alert.');
+				FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
+				document.getElementById('data').innerHTML = "";
+			} catch (e) {
+				document.getElementById('data').innerHTML = "FAILED";
+				alert(e);
+			}
+		}, false);
+  </script>
 </head>
 <body>
 <div id="pages">
@@ -72,17 +86,5 @@
         class="dynamic-wide medium large"> Club</span></a></li>
   </ul>
 </div>
-<script>
-	document.addEventListener('deviceready', function() {
-		try {
-			alert('Device is ready! Make sure you set your app_id below this alert.');
-			FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
-			document.getElementById('data').innerHTML = "";
-		} catch (e) {
-			document.getElementById('data').innerHTML = "FAILED";
-			alert(e);
-		}
-	}, false);
-</script>
 </body>
 </html>

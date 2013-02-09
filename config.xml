@@ -20,7 +20,7 @@
     <!-- Plugins for Phonegap Build(tm)  -->
     <gap:plugin name="ChildBrowser" />
     <gap:plugin name="FacebookConnect">
-        <param name="APP_ID" value="123456" />
+        <param name="APP_ID" value="335426296568734" />
     </gap:plugin>
 
     <!-- Splash Screen MUST be hidden using JavaScript -->
