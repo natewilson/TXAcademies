@@ -8,8 +8,11 @@ function scroll(){
 
 // Safe logging...
 function slog(str) {
+	var inPage = null;
 	if (console && console.log && typeof console.log == "function")
 		console.log(str);
+	if (inPage = document.getElementById("slog"))
+		inPage.innerHTML = str + "<br/>" + inPage.innerHTML;
 }
 
 
