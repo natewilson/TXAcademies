@@ -38,6 +38,14 @@
                                 	alert("FB.loginStatus=" + response);
 					});
 
+				FB.api("/me",{fields:'last_name'},function(response){
+					if ((!(response.error)) && response.first_name) {
+						document.getElementById('data').innerHTML = "Welcome Brother "+response.last_name;
+					} else {
+						document.getElementById('data').innerHTML = "So here's the deal: "+response.error;
+					}
+				});
+
 			} catch (e) {
 				document.getElementById('data').innerHTML = "FAILED" + e;
 			}
