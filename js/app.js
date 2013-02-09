@@ -1,11 +1,3 @@
-/*  REMOVED TEMPORARILY
-var theScroll;
-function scroll(){
-	theScroll = new iScroll('wrapper');
-}
-//*/
-//document.addEventListener('DOMContentLoaded', scroll, false);
-
 // Safe logging...
 function slog(str) {
 	var inPage = null;
@@ -88,18 +80,6 @@ $(document).ready(function(){
 		// keep the link from following any HREF attribute.
 		return false;
 	});
-
-	// Add the click behaviour to the nav bar
-	$('#nav-bar a').on('click', function(e){
-		e.preventDefault();
-		var nextPage = $(this).attr("href");
-		$("#pages .page").hide();
-		$(nextPage).show();
-	});
-
-	// Show the home page
-	$("#pages .page").hide();
-	$("#page-home").show();
 
 });
 //*/

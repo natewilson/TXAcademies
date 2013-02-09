@@ -19,64 +19,12 @@
 </head>
 <body>
 	<div id="fb-root"></div>
-	<div id="pages">
-		<div class="page" id="page-home">
-			<h2>Welcome to the Theta Xi Academies</h2>
-			<a href="#" onclick="javascript:greetUser();return false;">Connect App</a><br/>
-			<div id="data">Loading...</div>
-			<a href="#" onclick="FB.ui({method:'feed'},function(o){});"></a>
-			<div id="slog"></div>
-		</div>
-		<div class="page" id="page-dla">
-			<h2>District Leadership Academy</h2>
-			<p>Newell District Leadership Academies – A host chapter in each District hosts these academies designed to create a greater national consciousness by bringing together chapter members to meet, work and interact with one another and with officials of the Fraternity.</p>
-			<p>They provide an opportunity for representatives of chapters to share their successes and concerns. NDLAs provide educational and leadership programs to aid in the personal development of undergraduate members, thus helping to build leaders who improve and strengthen their chapters overall operations.</p>
-			<p>Held in February, chapters will gather at a host campus for a full day of workshops and activities focusing on Fraternity values and individual leadership skills training. All chapters in good financial standing will receive a mileage reimbursement.</p>
-		</div>
-		<div class="page" id="page-rsa">
-			<h2>Rising Stars Academy</h2>
-			<a href="#" goto="https://twitter.com/intent/tweet?hashtags=TXRSA">Share</a>
-			<p>This academy is for first-year initiates (men initiated in 2012) and coincides with the Presidents Academy. The Rising Stars Academy, now in its seventh year, concentrates on providing attendees an opportunity to assess and develop their leadership styles and skills, in an interactive and experiential setting. Along with meeting new members from across the country, they gather ideas they can take back to strengthen their chapters in the areas of recruitment, membership education and overall operations. Team building skills are strengthened by accomplishing tasks presented on an exciting outdoor leadership challenge course.</p>
-		</div>
-		<div class="page" id="page-vpa">
-			<h2>Vredenburgh Presidents Academy</h2>
-			<p>In its 14th year, the Vredenburgh Presidents Academy is an exciting program that enables each chapter president to improve his personal skills and chapter operations by joining with his peers for a high quality leadership and educational weekend.</p>
-			<p>The Vredenburgh Presidents Academy focuses on learning to apply a set of leadership competencies most needed by chapter presidents. These competencies include influencing followers to grasp a shared vision, motivating/empowering chapter members for engagement, and decision-making style/skills. The learning activities are designed to include significant time for Presidents to talk/work in small groups for common problem-solving, support, and the sharing of ideas.</p>
-			<p>To assist in this process, a team of recent Past-Presidents will be on hand as peer facilitators and “experts.” Past attendees consistently rank Presidents Academy as one of the highlights of their undergraduate Fraternity experience.</p>
-			<p>Attendance is limited to the current or incoming chapter or colony president who has not attended a previous Vredenburgh Presidents Academy. Theta Xi Foundation provides full scholarships for each chapter's President to attend the Academy (except for a $45 registration fee paid by the participant). The tuition covers all on-site costs at the Academy but travel to and from St. Louis is the responsibility of the member. Many chapters and/or their alumni association help cover travel costs.</p>
-		</div>
-		<div class="page" id="page-club">
-			<h2>The 1864 Club<h2>
-			<h3>Exclusively for Undergraduates</h3>
-			<a href="#" goto="https://www.wepay.com/x2zr00o">Join the Club!</a>
-			<ul>
-				<li>Recognition in The UNICORN as a contributor</li>
-				<li>1864 Club recognition pin</li>
-				<li>The satisfaction of knowing your support will serve as a role model to future generations of undergraduate members</li>
-				<li>Knowledge that your gift will enable other members to attend future academies</li>
-			</ul>
-			<a href="https://www.wepay.com/x2zr00o">Join the Club!</a>
-		</div>
-	</div>
-	<div id="footer">
-		<ul id="nav-bar">
-			<li><a href="#page-dla"><img src="img/all/column-icon-44w.png"
-					class="dynamic-wide small medium large" /><span 
-					class="dynamic-wide medium"> DLA</span><span 
-					class="dynamic-wide large"> District</span></a></li>
-			<li><a href="#page-rsa"><img src="img/all/rsa-icon-36w.png"
-					class="dynamic-wide small medium large" /><span
-					class="dynamic-wide medium"> RSA</span><span
-					class="dynamic-wide large"> Rising Stars</span></a></li>
-			<li><a href="#page-vpa"><img src="img/all/vpa-icon-75w.png"
-					class="dynamic-wide small medium large" /><span
-					class="dynamic-wide medium"> VPA</span><span
-					class="dynamic-wide large"> Presidents</span></a></li>
-			<li><a href="#page-club"><img src="img/all/1864-icon-36w.png"
-					class="dynamic-wide small medium large" style="margin-top:4px;"/><span 
-					class="dynamic-wide large"> 1864</span><span
-					class="dynamic-wide medium large"> Club</span></a></li>
-		</ul>
+	<div class="page" id="page-home">
+		<h2>Welcome to the Theta Xi Academies</h2>
+		<a href="#" onclick="javascript:greetUser();return false;">Connect App</a><br/>
+		<div id="data">Loading...</div>
+		<a href="#" onclick="FB.ui({method:'feed',name:'name',caption:'caption',description:'description'},function(o){});">Test the Feed</a>
+		<div id="slog"></div>
 	</div>
 </body>
 </html>
