@@ -65,6 +65,17 @@ function onDeviceReady() {
 }
 
 
+function evaluateFBSession() {
+	slog("Something Changed in your FB Session!");
+}
+
+function logoutFB() {
+	slog("FB logout detected.  Switching to Connect stage");
+	$('img#fb-connect-img').click(FB.login);
+	$('div.stage').hide();
+	$('div.stage#fb-connect').show();
+}
+
 
 // function to call when Cordova/PhoneGap native code is loaded AND Document is ready.
 function initialize() {
@@ -86,11 +97,14 @@ function initialize() {
 	try {
 		slog("Trying to initialize FB.");
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
+		slog("Subscribing to FB sessionChange event");
+		FB.Event.subscribe('auth.sessionChange event',evaluateFBSession);
 		FB.getLoginStatus(function(response){
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
 					if (response.authResponse) {
 						// Show the welcome stage?? or share stage??
 					} else {
+						$('img#fb-connect-img').click(FB.login);
 						$("div.stage").hide();
 						$("div.stage#fb-connect").show();
 					}
