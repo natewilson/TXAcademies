@@ -7,6 +7,8 @@ function slog(str) {
 		inPage.innerHTML = str + "<br/>" + inPage.innerHTML;
 }
 
+// Assign an anonymous function to load after the document that
+// checks for the availability of in-page logging.
 document.addEventListener("DOMContentLoaded",function() {
 	if (!(inPage = document.getElementById("slog"))) {
 		slog("No In-Page sLog element found. Add <div id='slog'></div> to activate.");
@@ -15,6 +17,9 @@ document.addEventListener("DOMContentLoaded",function() {
 	}
 }, false);
 
+
+// Used for things that run after BOTH deviceReady and DOMContentLoaded events fire
+var DOMContentLoaded = false;
 
 /*
 function getLoginStatus() {
@@ -51,18 +56,31 @@ function greetUser() {
 } //*/
 
 
-
-// function to call when Cordova/PhoneGap native code is loaded.
+// Will run initialize after both deviceReady and DOMContentLoaded
 function onDeviceReady() {
+	if (!DOMContentLoaded)
+		document.addEventListener("DOMContentLoaded", initialize, false);
+	else 
+		initialize();
+}
+
+
+
+// function to call when Cordova/PhoneGap native code is loaded AND Document is ready.
+function initialize() {
 
 	slog("Entering onDeviceReady()");
 
 	// First show the loading stage
-	//$('div.stage').hide();
-	//$('div.stage#loading').show();
+	$('div.stage').hide();
+	$('div.stage#loading').show();
 
 	// Remove the Splash Screen
-	navigator.splashscreen.hide();
+	try {
+		navigator.splashscreen.hide();
+	} catch (e) {
+		slog("Error hiding splashscreen - are you running in a browser?");
+	}
 
 	// Attempt connection to Facebook:
 	try {
@@ -72,7 +90,6 @@ function onDeviceReady() {
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
 					if (response.authResponse) {
 						// Show the welcome stage?? or share stage??
-						continue;
 					} else {
 						$("div.stage").hide();
 						$("div.stage#fb-connect").show();
@@ -86,9 +103,17 @@ function onDeviceReady() {
 
 }
 
+// Register anonymous function to indicate that DOM is loaded
+slog("Adding event listener for anonymous function to assign DOMContentLoaded");
+document.addEventListener("DOMContentLoaded",function(){DOMContentLoaded=true;},false);
+
 // Register the deviceReady (native code dependent) function.
 slog("Adding event listener for deviceReady");
 document.addEventListener("deviceready", onDeviceReady, false);
+
+// TODO: REMOVE ME!!!!
+// this simulates deviceReady
+onDeviceReady();
 
 
 /*
