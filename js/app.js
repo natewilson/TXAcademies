@@ -72,6 +72,10 @@ function evaluateFBSession() {
 	slog("Something Changed in your FB Session!");
 }
 
+function loginFB() {
+	slog("Facebook login detected.");
+}
+
 function logoutFB() {
 	slog("FB logout detected.  Switching to Connect stage");
 	$('img#fb-connect-img').click(FB.login);
@@ -101,11 +105,22 @@ function initialize() {
 		slog("Trying to initialize FB.");
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
 
+		slog("Subscribing to FB Login event");
+		FB.Event.subscribe('auth.sessionChange event',evaluateFBSession);
+
 		slog("Subscribing to FB sessionChange event");
 		FB.Event.subscribe('auth.sessionChange event',evaluateFBSession);
 
 		// Need to setup the connect operation for later just in case we need it.
-		$('img#fb-connect-img').click(function(){FB.login(slogJSON,{scope:"email"});});
+		$('img#fb-connect-img').click(
+				function(){
+					try {
+						FB.login(slog,{scope:"email"});
+					} catch (e) {
+						slogJSON(e);
+						alert("TX Academies needs to be connected to Facebook.");
+					}
+				});
 
 		FB.getLoginStatus(function(response){
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
