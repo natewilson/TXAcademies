@@ -7,6 +7,14 @@ function slog(str) {
 		inPage.innerHTML = str + "<br/>" + inPage.innerHTML;
 }
 
+document.addEventListener("DOMContentLoaded",function() {
+	if (!(inPage = document.getElementById("slog"))) {
+		slog("No In-Page sLog element found. Add <div id='slog'></div> to activate.");
+	} else {
+		slog("In-Page logging active.");
+	}
+}, false);
+
 
 /*
 function getLoginStatus() {
