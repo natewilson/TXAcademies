@@ -47,15 +47,18 @@ function greetUser() {
 // function to call when Cordova/PhoneGap native code is loaded.
 function onDeviceReady() {
 
+	slog("Entering onDeviceReady()");
+
 	// First show the loading stage
 	//$('div.stage').hide();
-	//$('siv.stage#loading').show();
+	//$('div.stage#loading').show();
 
 	// Remove the Splash Screen
 	navigator.splashscreen.hide();
 
 	// Attempt connection to Facebook:
 	try {
+		slog("Trying to initialize FB.");
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
 		FB.getLoginStatus(function(response){
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
@@ -76,8 +79,8 @@ function onDeviceReady() {
 }
 
 // Register the deviceReady (native code dependent) function.
+slog("Adding event listener for deviceReady");
 document.addEventListener("deviceready", onDeviceReady, false);
-
 
 
 /*
