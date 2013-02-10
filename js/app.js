@@ -97,14 +97,18 @@ function initialize() {
 	try {
 		slog("Trying to initialize FB.");
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
+
 		slog("Subscribing to FB sessionChange event");
 		FB.Event.subscribe('auth.sessionChange event',evaluateFBSession);
+
+		// Need to setup the connect operation for later just in case we need it.
+		$('img#fb-connect-img').click(function(){FB.login(slog,{scope:"email"});});
+
 		FB.getLoginStatus(function(response){
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
 					if (response.authResponse) {
 						// Show the welcome stage?? or share stage??
 					} else {
-						$('img#fb-connect-img').click(FB.login);
 						$("div.stage").hide();
 						$("div.stage#fb-connect").show();
 					}
