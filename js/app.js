@@ -8,6 +8,7 @@ function slog(str) {
 }
 
 
+/*
 function getLoginStatus() {
 	FB.getLoginStatus(function(response) {
 		slog("JSON FB.getLoginStatus: " + JSON.stringify(response));
@@ -25,9 +26,10 @@ function getLoginStatus() {
 			},{scope: "email"});
 		}
 	});
-}
+} //*/
 
 
+/*
 function greetUser() {
 	getLoginStatus();
 	FB.api("me/",{fields:'id,last_name'},function(response){
@@ -38,7 +40,8 @@ function greetUser() {
 			slog("No last name retrieved from FB.  Error: " + JSON.stringify(response.error));
 		}
 	});
-}
+} //*/
+
 
 
 // function to call when Cordova/PhoneGap native code is loaded.
@@ -77,6 +80,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 
+/*
 // Load this stuff up when the document loads.
 // This may happen BEFORE the Phonegap library is loaded.
 $(document).ready(function(){

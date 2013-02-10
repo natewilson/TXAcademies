@@ -6,7 +6,7 @@ div.stage {
 	display: none;
 }
 
-
+/*
 @media all and (orientation:portrait) {
 	div#layout-debug > span#portrait { display: inline; }
 	div#layout-debug > span#landscape { display: none; }
@@ -16,11 +16,13 @@ div.stage {
 	div#layout-debug > span#portrait { display: none; }
 	div#layout-debug > span#landscape { display: inline; }
 }
+//*/
 
 /* ==================================== */
 /* GENERAL RULES FOR SMALL MEDIUM LARGE */
 /* ==================================== */
 
+/*
 @media all and (orientation:portrait) and (min-width: 600px), 
 	all and (orientation:landscape) and (min-height: 600px) {
 	.dynamic.large.block       { display: block;  }
@@ -39,11 +41,13 @@ div.stage {
 	.dynamic.small:not(.block) { display: inline; }
 	.dynamic:not(.small)       { display: none;   }
 }
+//*/
 
 /* ======================= */
 /* RULES SPECIFIC TO WIDTH */
 /* ======================= */
 
+/*
 @media all and (max-width: 639px) {
 	.dynamic-wide.small.block       { display: block;  }
 	.dynamic-wide.small:not(.block) { display: inline; }
@@ -59,4 +63,4 @@ div.stage {
 	.dynamic-wide.large:not(.block) { display: inline; }
 	.dynamic-wide:not(.large)       { display: none;   }
 }
-
+//*/
