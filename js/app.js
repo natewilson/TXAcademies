@@ -115,7 +115,11 @@ function initialize() {
 		$('img#fb-connect-img').click(
 				function(){
 					try {
-						FB.login(slog,{scope:"email"});
+						FB.login(function(response){
+									slogJSON(response);
+									$('div.stage').hide();
+									$('div.stage#share').show();
+								},{scope:"email"});
 					} catch (e) {
 						slogJSON(e);
 						alert("TX Academies needs to be connected to Facebook.");
@@ -126,6 +130,8 @@ function initialize() {
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
 					if (response.authResponse) {
 						// Show the welcome stage?? or share stage??
+						$('div.stage').hide();
+						$('div.stage#share').show();
 					} else {
 						$("div.stage").hide();
 						$("div.stage#fb-connect").show();
