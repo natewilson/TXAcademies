@@ -45,8 +45,8 @@ function greetUser() {
 function onDeviceReady() {
 
 	// First show the loading stage
-	$('div.stage').hide();
-	$('siv.stage#loading').show();
+	//$('div.stage').hide();
+	//$('siv.stage#loading').show();
 
 	// Remove the Splash Screen
 	navigator.splashscreen.hide();
