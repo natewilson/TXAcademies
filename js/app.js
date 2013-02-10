@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded",function() {
 	}
 }, false);
 
+function slogJSON(json) {
+	slog(JSON.stringify(json));
+}
 
 // Used for things that run after BOTH deviceReady and DOMContentLoaded events fire
 var DOMContentLoaded = false;
@@ -102,7 +105,7 @@ function initialize() {
 		FB.Event.subscribe('auth.sessionChange event',evaluateFBSession);
 
 		// Need to setup the connect operation for later just in case we need it.
-		$('img#fb-connect-img').click(function(){FB.login(slog,{scope:"email"});});
+		$('img#fb-connect-img').click(function(){FB.login(slogJSON,{scope:"email"});});
 
 		FB.getLoginStatus(function(response){
 					slog("FB.getLoginStatus: "+JSON.stringify(response));
