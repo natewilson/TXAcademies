@@ -19,12 +19,18 @@
 </head>
 <body>
 	<div id="fb-root"></div>
-	<div class="page" id="page-home">
-		<h2>Welcome to the Theta Xi Academies</h2>
-		<a href="#" onclick="javascript:greetUser();return false;">Connect App</a><br/>
-		<div id="data">Loading...</div>
-		<a href="#" onclick="FB.ui({method:'feed',name:'name',caption:'caption',description:'description'},function(o){});">Test the Feed</a>
-		<div id="slog"></div>
+	<div id="loading" class="stage">
+		Loading...
 	</div>
+	<div id="fb-connect" class="stage">
+		<h2>Welcome to the Theta Xi Academies</h2>
+		<img src="img/all/fb_connect_logo_500w.png" onclick="javascript:FB.login();" />
+	</div>
+	<!--
+	<a href="#" onclick="javascript:greetUser();return false;">Connect App</a><br/>
+	<div id="data">Loading...</div>
+	<a href="#" onclick="FB.ui({method:'feed',name:'name',caption:'caption',description:'description'},function(o){});">Test the Feed</a>
+	-->
+	<div id="slog"></div>
 </body>
 </html>

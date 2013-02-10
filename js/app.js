@@ -44,14 +44,30 @@ function greetUser() {
 // function to call when Cordova/PhoneGap native code is loaded.
 function onDeviceReady() {
 
+	// First show the loading stage
+	$('div.stage').hide();
+	$('siv.stage#loading').show();
+
 	// Remove the Splash Screen
 	navigator.splashscreen.hide();
 
 	// Attempt connection to Facebook:
 	try {
 		FB.init({ appId: "335426296568734", nativeInterface: CDV.FB, useCachedDialogs: false });
+		FB.getLoginStatus(function(response){
+					slog("FB.getLoginStatus: "+JSON.stringify(response));
+					if (response.authResponse) {
+						// Show the welcome stage?? or share stage??
+						continue;
+					} else {
+						$("div.stage").hide();
+						$("div.stage#fb-connect").show();
+					}
+				},
+				{scope:"email"}
+		);
 	} catch (e) {
-		slog("Facebook init issue: " + JSON.stringify(e));
+		slog("FB threw exception: " + JSON.stringify(e));
 	}
 
 }

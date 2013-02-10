@@ -2,9 +2,10 @@ body {
 	background-image: url("../img/all/tileable-white-wood.png");
 }
 
-div#layout-debug {
+div.stage {
 	display: none;
 }
+
 
 @media all and (orientation:portrait) {
 	div#layout-debug > span#portrait { display: inline; }
@@ -59,51 +60,3 @@ div#layout-debug {
 	.dynamic-wide:not(.large)       { display: none;   }
 }
 
-
-/* Pages */
-#pages {
-	height: 100%;
-	background-image: url("../img/all/seal-overlay-8p.png");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 50% 30%;
-}
-#pages > .page {
-	height: 100%;
-	padding: 0px 8px 0px 8px;
-}
-
-
-/* NAVIGATION BAR AT BOTTOM */
-ul#nav-bar {
-	background-image: url("../img/all/nav_bar_back.png");
-	background-repeat: repeat-x;
-	border: 0px;
-	bottom: 0px;
-	height: 48px;
-	margin: 0px;
-	padding: 0px;
-	position: fixed;
-	width: 100%;
-}
-ul#nav-bar li {
-	color: #BBB;
-	display: inline;
-	float: left;
-	font-size: 22px;
-	line-height: 44px;
-	text-align: center;
-	text-decoration: none;
-	width: 24.85%;
-}
-ul#nav-bar li a {
-	text-decoration: none;
-}
-ul#nav-bar li span {
-	color: #BBB;
-	text-decoration: none;
-	vertical-align: middle;
-}
-ul#nav-bar li img {
-	vertical-align: middle;
-}
