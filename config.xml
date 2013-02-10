@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.n8wilson.phonegap"
         versionCode = "10" 
-        version   = "1.0.0001">
+        version   = "1.0.00011">
 
     <!-- versionCode is optional and Android only -->
 
@@ -24,7 +24,7 @@
     </gap:plugin>
 
     <!-- Splash Screen MUST be hidden using JavaScript -->
-    <preference name="auto-hide-splash-screen" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
 
     <!-- iOS specific config -->
     <preference name="fullscreen" value="true" />
