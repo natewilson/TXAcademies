@@ -113,7 +113,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 // TODO: REMOVE ME!!!!
 // this simulates deviceReady
-onDeviceReady();
+// onDeviceReady();
 
 
 /*
